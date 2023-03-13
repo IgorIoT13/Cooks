@@ -1,111 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Cook'n'Love</title>
-	 	<script src="https://kit.fontawesome.com/b8991598b2.js"></script>
-        <script src ="https://kit.fontawesome.com/a076d05399.js"></script>
-	<link rel="stylesheet" href="CSS/main.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Cook'n'Love</title>
+    <script src="https://kit.fontawesome.com/b8991598b2.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    
+
+
+
+
+    <!--Бустрап не чіпайте Іроди-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 <body>
-	<header>
-		<div class="logo">
-			<a href="index.html"><img class="grafic" src="images/logo.jpg" alt="Logo"> </a>
-		</div>
-		<nav>
-			<div class="topnav" id="myTopnav">
-				<a href="index.html">HOME</a>
-				<a href="food.html">FOOD</a>
-				<a href="drinks.html">DRINKS</a>
-				<a href="services.html">SERVICES</a>
-				<a href="location.html">LOCATION</a>
-				<a id="menu" href="#" class="icon">&#9776;</a>
-			</div>
-		</nav>
-	</header>
+    <header>
 
-	<main>
-		<div class="Recipes">
-			<div class="TEXT">Keep it easy with these simple but delicious recipes. From make-ahead breakfasts, lunches and midweek meals to fuss-free sides and moreish cakes we've got everything</div>
-		<a href="index html"><img class="nice" src="images/Food.jpg" alt="Food"> </a>
-	</div>
-	
-	</main>
-	<div class="Bitok">
-		<br>
-		<br>
+        <div class="logo">
+            <a href="index.html"><img class="grafic" src="images/logo.jpg" alt="Logo"> </a>
+        </div>
 
-                <h1 align="center">Dish for You!</h1>
-                <br>
-                <br>
-                <br>
+        <nav>
+
+            <div class="topnav" id="myTopnav">
+                <a href="index.html">Головна</a>
+                <a href="food.html">Їжа</a>
+                <a href="drinks.html">Напої</a>
+                <a href="#Contact">Контакти</a>
+                <a id="menu" href="#" class="icon">&#9776;</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class=" Recipes container max-width: 100% ">
+        <br>
+
+        <div class="py-1">
+
+            <div class="fs-5 col-7"> <b>У нас ти легко знайдеш рецепт для себе.<br> Усе просто: вводиш інградієнти у пошук - отримуєш рецепти. </b></div>
+
+            <div class="col-5"></div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+    </main>
+
+
+
+    <!--Початок "Пошук"-->
+
+    <div class="hstack gap-3 container my-4">
+        <input class="form-control me-auto color_s" іd="search" type="text" placeholder="Пошук інградієнтів">
+        <button type="button" class="btn btn-secondary">Пошук</button>
+        <div class="vr"></div>
+        <button type="button" class="btn btn-outline-danger">Скинути</button>
     </div>
-    	
-            <div class="Handmade">
-                 <img src="images/Break.jpg">
-                </div>
-               <div class="Hammer">
-                <img src="images/recipes.jpg" >
-                </div>
+
+    <script>
+        const input = document.getElementById("search");
+
+        input.addEventListener("keyup", (event) => {
+            const APP_ID = "90e3a153";
+            const APP_KEY = "43b6658fb63b29ee37f5d8663c5d218f"
+            const query = input.value;
+            fetch("https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}")
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
+        });</script>
+
+    <!--Кінець "Пошук"-->
+
+
+    <div>
+        <p class="fs-2 list"><b>Тут ти можеш вибрати потрібні інгредієнти</b> </p>
+    </div>
 
     <br>
+    <br>
 
-            <div class="list-delivery">
-                <p class ="list">Here you can see a list of products that you can choose to know what you want! </p>
-            </div>
-            <br>
-            <br>
+    <!--Початок "Контейнер"-->
 
-            <div class="search-box">
-            	<input class="search-txt" type="text" name="" placeholder="Type to search">
-            	<a class="search-btn" href="#">
-            		<i class="fas fa-search"></i>
-            	</a>
-            	
- <div class="Bordik">
-            <div class="my-5_rad_bg-danger">
+    <div class="container">
 
-                <h3 align="center">Join our Community</h3>
+    </div>
+
+
+
+
+    <div class="container Bitok pt-5">
+
+        <h1 class="py-3" align="center">Страва для тебе!</h1>
+
+    </div>
+
+
+
+
+    <div class="container text-center">
+
+        <img class="img-fluid" style="height:600px; width:auto;" src="images\Break.jpg">
+
+    </div>
+
+
+    <!--Кінець "Контейнер"-->
+
+
+
+    <br>
+    <br>
+
+    <!--Початок "Футер"-->
+    <div class="container">
+
+
+        <div class="Bordik">
+            <div class="my-5_rad_bg-danger row">
+
+                <h3 class="py-3" align="center">Приєднуйтесь до нас!</h3>
                 <br>
-                <h3 align="center">FOLLOW US @Cook 'n' Love</h3>
+                <h3 id="Contact" class="py-3" align="center">Стежте за нами @Cook 'n' Love</h3>
                 <br>
                 <br>
-                <div class="wrapper">
-                    <div class="icon Facebook">
+
+
+                <div class="col-4"></div>
+
+
+                <div class="wrapper py-2 col-4 my-3">
+
+                    <div class="icon Facebook  my-5">
                         <div class="tooltrip">Facebook</div>
                         <span><i class="fab fa-facebook-f"></i></span>
                     </div>
-                     <div class="icon instagram">
+
+                    <div class="icon instagram  my-5">
                         <div class="tooltrip">Instagram</div>
                         <span><i class="fab fa-instagram"></i></span>
                     </div>
-                     <div class="icon twitter">
+
+                    <div class="icon twitter  my-5">
                         <div class="tooltrip">Twitter</div>
                         <span><i class="fab fa-twitter"></i></span>
                     </div>
-                     <div class="icon youtube">
+
+                    <div class="icon youtube  my-5">
                         <div class="tooltrip">YouTube</div>
                         <span><i class="fab fa-youtube"></i></span>
                     </div>
-                   </div>
-                  
-                  <br>
-                  <br>
+
+                </div>
 
 
-                <p align="center">Tel number. ----------</p>
-                    
-                <p align="center">Address ---</p>
-          </div>
-      </div>
+                <div class="col-4"></div>
+                <br>
+                <br>
 
 
+                <p align="center">Тел. номер ----------</p>
+
+                <p align="center">Адреса ---</p>
+            </div>
+        </div>
+
+    </div>
+    <!--Кінець "Футер"-->
 
 
+    <script src="js/script.js"></script>
 
-	<script src="js/script.js"></script>
+    <!--Бустрап скріпти-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
